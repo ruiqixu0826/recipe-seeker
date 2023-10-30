@@ -1,0 +1,13 @@
+#Problem-5 p {
+  padding: 4px;
+  color: #FFF;
+}
+
+#Problem-6 output {
+  margin: 6px;
+  padding: 6px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  border: 2px solid gainsboro;
+  min-width: 80px;
+}
