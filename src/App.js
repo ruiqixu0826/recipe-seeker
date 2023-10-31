@@ -1,4 +1,4 @@
-import List from './components/list.js';
+import Search from './components/search.js';
 import './App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <p>Discover a world of culinary delights!</p>
       </header>
       <main>
-        <List />
+        <Search />
       </main>
       <footer className="app-footer">
         <p>&copy; 2023 Recipe Seeker. Made with ❤️ by Dev Sharma & Ruiqi Xu.</p>
