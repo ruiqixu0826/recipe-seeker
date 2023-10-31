@@ -1,4 +1,5 @@
 import Search from './components/search.js';
+import Homepage from './components/homepage.js'
 import './App.css';
 
 function App() {
@@ -6,9 +7,9 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1>Recipe Seeker</h1>
-        <p>Discover a world of culinary delights!</p>
       </header>
       <main>
+        <Homepage />
         <Search />
       </main>
       <footer className="app-footer">
