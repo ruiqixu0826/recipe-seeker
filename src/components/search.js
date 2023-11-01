@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Search() {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const API_KEY = '04d86eddb54646d5809613a629d0b140'; // Ensure you have your Spoonacular API key here
+  const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY; // Ensure you have your Spoonacular API key here
   const API_ENDPOINT = 'https://api.spoonacular.com/recipes/complexSearch';
   const handleSearch = (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ function Search() {
       <ul>
         {recipes.map(recipe => (
           <li key={recipe.id}>
-            <h2>{recipe.title}</h2>
+            <h2><a href={`/recipe/${recipe.id}`}>{recipe.title}</a></h2>
             <img src={recipe.image} alt={recipe.title} />
             <p>{recipe.description}</p> 
           </li>
