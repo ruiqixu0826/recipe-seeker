@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function RecipeDetail() {
+const RecipeDetail = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
   const API_ENDPOINT = `https://api.spoonacular.com/recipes/${id}/information`;
+
 
   useEffect(() => {
     fetch(`${API_ENDPOINT}?apiKey=${API_KEY}`)

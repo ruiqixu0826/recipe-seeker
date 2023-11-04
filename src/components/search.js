@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Search() {
+const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY; // Ensure you have your Spoonacular API key here

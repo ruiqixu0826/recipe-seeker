@@ -1,5 +1,5 @@
 import Search from './components/search.js';
-import Homepage from './components/homepage.js'
+import Homepage from './components/homepage/homepage.js'
 import RecipeDetail from './components/recipeDetail.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -11,7 +11,7 @@ function App() {
       <header className="app-header">
         <h1>Recipe Seeker</h1>
       </header>
-      <main>
+      <main className='main-container'>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/search" element={<Search />} />
