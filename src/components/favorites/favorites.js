@@ -20,11 +20,11 @@ const Favorites = () => {
   return (
     <div>
       <h1>Your Favorite Recipes</h1>
-      <div className="favorites-container">
+      <div className="favorites-container row g-4 mt-2">
         {favorites.length > 0 ? (
           favorites.map((recipe) => (
-            <div key={recipe.id} className="favorite-recipe-card">
-              <RecipeCard recipe={recipe} />
+            <div key={recipe.id} className="favorite-recipe-card col-4 d-flex">
+              <RecipeCard key={recipe.id} recipe={recipe} detail={false}/>
               <button onClick={() => removeFavorite(recipe.id)}>
                 Remove from Favorites
               </button>

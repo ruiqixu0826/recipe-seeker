@@ -6,7 +6,7 @@ const RecipeDetail = () => {
   const [recipe, setRecipe] = useState(null);
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
   const API_ENDPOINT = `https://api.spoonacular.com/recipes/${id}/information`;
-
+  const [successMsg, setSuccessMsg] = useState('');
   useEffect(() => {
     fetch(`${API_ENDPOINT}?apiKey=${API_KEY}`)
       .then((response) => response.json())
@@ -17,6 +17,20 @@ const RecipeDetail = () => {
         console.error("Error fetching recipe details:", error);
       });
   }, [id]);
+
+  const addToFavorites = () => {
+    const currentFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (currentFavorites.some(favorite => favorite.id === recipe.id)) {
+      setSuccessMsg('Recipe is already in favorites.');
+    } else {
+      const updatedFavorites = [...currentFavorites, recipe];
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+      setSuccessMsg('Recipe added to favorites successfully.');
+      setTimeout(() => {
+        setSuccessMsg('');
+      }, 3000); // Hide the success message after 3 seconds
+    }
+  };
 
   if (!recipe)
     return (
@@ -29,6 +43,14 @@ const RecipeDetail = () => {
 
   return (
     <div className="container py-5">
+      <button onClick={addToFavorites} className="btn btn-success">
+        Add to Favorites
+      </button>
+      {successMsg && (
+        <div className="alert alert-success mt-2" role="alert">
+          {successMsg}
+        </div>
+      )}
       <h2 className="text-center mb-4">{recipe.title}</h2>
       <div className="row justify-content-center mb-4">
         <div className="col-lg-6">
