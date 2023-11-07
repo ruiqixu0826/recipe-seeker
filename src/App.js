@@ -1,4 +1,4 @@
-import Search from './components/search.js';
+import Search from './components/search/search.js';
 import Homepage from './components/homepage/homepage.js'
 import RecipeDetail from './components/recipeDetail/recipeDetail.js';
 import Favorites from './components/favorites/favorites.js';

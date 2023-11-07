@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import SearchBar from './searchBar/searchBar';
-import RecipeCard from './recipeCard/recipeCard';
+import SearchBar from '../searchBar/searchBar';
+import RecipeCard from '../recipeCard/recipeCard';
 
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
