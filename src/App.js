@@ -1,6 +1,7 @@
 import Search from './components/search.js';
 import Homepage from './components/homepage/homepage.js'
 import RecipeDetail from './components/recipeDetail/recipeDetail.js';
+import Favorites from './components/favorites/favorites.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
         <nav>
           <ul>
             <li key="home"><a href="/">Home</a></li>
+            <li key="favorites"><a href="/favorites">Favorites</a></li>
           </ul>
         </nav>
       </header>
@@ -21,7 +23,7 @@ function App() {
           <Route path="/" key="home" element={<Homepage />} />
           <Route path="/search" key="search" element={<Search />} />
           <Route path="/recipe/:id" key="detail" element={<RecipeDetail/>} />
-
+          <Route path="/favorites" key="favorites" element={<Favorites />} />
         </Routes>
       </main>
       <footer className="app-footer">
