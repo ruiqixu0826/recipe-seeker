@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import SearchBar from './searchBar/searchBar';
+import RecipeCard from './recipeCard/recipeCard';
 
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
+  const {searchTerm, maxTime, preferences } = location.state || {};
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY; // Ensure you have your Spoonacular API key here
   const API_ENDPOINT = 'https://api.spoonacular.com/recipes/complexSearch';
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchTerm) { 
-      fetch(`${API_ENDPOINT}?query=${searchTerm}&apiKey=${API_KEY}`)
+  useEffect(() => {
+    if (searchTerm) {
+      const query = new URLSearchParams({
+        query: searchTerm,
+        maxReadyTime: maxTime,
+        diet: Object.keys(preferences).filter(preference => preferences[preference]).join(','),
+        // Add additional parameters based on preferences here
+      });
+      fetch(`${API_ENDPOINT}?${query}&apiKey=${API_KEY}`)
         .then(response => response.json())
         .then(data => {
-          setRecipes(data.results); 
+          setRecipes(data.results || []); // Ensure the default is an empty array if results are not provided
         })
         .catch(error => {
           console.error('Error fetching recipes:', error);
         });
     }
-  };
+  }, [searchTerm, maxTime, preferences, API_KEY]);
 
   return (
+    <>
     <div>
-      <form onSubmit={handleSearch}>
-        <input 
-          type="text" 
-          placeholder="Search for recipes..." 
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <ul>
+      <SearchBar />
+      <div className='container mt-5'>
+      <h1>Search Results</h1>
+        <div className='row g-4 mt-2'>
         {recipes.map(recipe => (
-          <li key={recipe.id}>
-            <h2><a href={`/recipe/${recipe.id}`}>{recipe.title}</a></h2>
-            <img src={recipe.image} alt={recipe.title} />
-            <p>{recipe.description}</p> 
-          </li>
-        ))}
-      </ul>
+            <>
+            <div className='col-4 d-flex'>
+              <RecipeCard key={recipe.id} recipe={recipe}/>
+            </div>
+            </>
+          ))}
+          </div>
+      </div>
     </div>
+    </>
   );
 }
 

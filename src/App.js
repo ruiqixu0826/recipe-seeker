@@ -10,12 +10,17 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1>Recipe Seeker</h1>
+        <nav>
+          <ul>
+            <li key="home"><a href="/">Home</a></li>
+          </ul>
+        </nav>
       </header>
       <main className='main-container'>
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/recipe/:id" element={<RecipeDetail/>} />
+          <Route path="/" key="home" element={<Homepage />} />
+          <Route path="/search" key="search" element={<Search />} />
+          <Route path="/recipe/:id" key="detail" element={<RecipeDetail/>} />
         </Routes>
       </main>
       <footer className="app-footer">

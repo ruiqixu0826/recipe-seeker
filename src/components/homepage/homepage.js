@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Search from '../search';
 import savedRecipes from '../../util/recipes';
 import RecipeCard from '../recipeCard/recipeCard.js';
 import SearchBar from '../searchBar/searchBar.js';
