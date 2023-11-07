@@ -3,7 +3,7 @@ import "./searchBar.css";
 import { useNavigate } from "react-router-dom"; // if using React Router
 
 const SearchBar = () => {
-  const [advSearch, setAdvanced] = useState(false);
+  const [advSearch, setAdvSearch] = useState(false);
   const [maxTime, setMaxTime] = useState("45");
   const [preferences, setPreferences] = useState({
     glutenFree: false,
@@ -16,7 +16,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedAdvSearch = localStorage.getItem("advSearch") || false;
+    const savedAdvSearch = JSON.parse(localStorage.getItem("advSearch")) || false;
     const savedSearchTerm = localStorage.getItem("searchTerm") || "";
     const savedMaxTime = localStorage.getItem("maxTime") || "45";
     const savedPreferences = JSON.parse(
@@ -28,7 +28,7 @@ const SearchBar = () => {
       ovoVegetarian: false,
       vegetarian: false,
     };
-    setAdvanced(savedAdvSearch);
+    setAdvSearch(savedAdvSearch);
     setSearchTerm(savedSearchTerm);
     setMaxTime(savedMaxTime);
     setPreferences(savedPreferences);
@@ -47,17 +47,19 @@ const SearchBar = () => {
       localStorage.setItem("maxTime", maxTime);
       localStorage.setItem("preferences", JSON.stringify(preferences));
     }
-    setAdvanced(e.target.checked);
+    setAdvSearch(e.target.checked);
     localStorage.setItem("advSearch", e.target.checked);
   };
 
   const sliderChange = (e) => {
     setMaxTime(e.target.value);
+    localStorage.setItem("maxTime", e.target.value);
   };
 
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     setPreferences((prev) => ({ ...prev, [name]: checked }));
+    localStorage.setItem("preferences", JSON.stringify(preferences));
   };
 
   const performSearch = () => {

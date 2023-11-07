@@ -4,6 +4,16 @@ import RecipeCard from '../recipeCard/recipeCard.js';
 import SearchBar from '../searchBar/searchBar.js';
 
 const Homepage = () => {
+  localStorage.setItem("advSearch", JSON.stringify(false));
+  localStorage.setItem("searchTerm", "");
+  localStorage.setItem("maxTime", "45");
+  localStorage.setItem("preferences", JSON.stringify({
+    glutenFree: false,
+    lactoseFree: false,
+    vegan: false,
+    ovoVegetarian: false,
+    vegetarian: false,
+  }));
   const [recipes, setRecipes] = useState([]);
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
   const API_ENDPOINT = 'https://api.spoonacular.com/recipes/random?number=5'; // Fetching 5 random recipes as an example
