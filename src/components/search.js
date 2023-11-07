@@ -38,7 +38,7 @@ const Search = () => {
         {recipes.map(recipe => (
             <>
             <div className='col-4 d-flex'>
-              <RecipeCard key={recipe.id} recipe={recipe}/>
+              <RecipeCard key={recipe.id} recipe={recipe} detail={false}/>
             </div>
             </>
           ))}

@@ -1,6 +1,6 @@
 import Search from './components/search.js';
 import Homepage from './components/homepage/homepage.js'
-import RecipeDetail from './components/recipeDetail.js';
+import RecipeDetail from './components/recipeDetail/recipeDetail.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/" key="home" element={<Homepage />} />
           <Route path="/search" key="search" element={<Search />} />
           <Route path="/recipe/:id" key="detail" element={<RecipeDetail/>} />
+
         </Routes>
       </main>
       <footer className="app-footer">
