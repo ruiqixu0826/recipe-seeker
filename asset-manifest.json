@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/recipe-seeker/static/css/main.00872650.css",
+    "main.js": "/recipe-seeker/static/js/main.40695eb5.js",
+    "static/js/787.a391e9ff.chunk.js": "/recipe-seeker/static/js/787.a391e9ff.chunk.js",
+    "index.html": "/recipe-seeker/index.html",
+    "main.00872650.css.map": "/recipe-seeker/static/css/main.00872650.css.map",
+    "main.40695eb5.js.map": "/recipe-seeker/static/js/main.40695eb5.js.map",
+    "787.a391e9ff.chunk.js.map": "/recipe-seeker/static/js/787.a391e9ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00872650.css",
+    "static/js/main.40695eb5.js"
+  ]
+}
