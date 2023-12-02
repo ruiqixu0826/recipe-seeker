@@ -20,10 +20,10 @@ function App() {
       </header>
       <main className='main-container'>
         <Routes>
-          <Route path="/" key="home" element={<Homepage />} />
-          <Route path="/search" key="search" element={<Search />} />
-          <Route path="/recipe/:id" key="detail" element={<RecipeDetail/>} />
-          <Route path="/favorites" key="favorites" element={<Favorites />} />
+          <Route path="/recipe-seeker" key="home" element={<Homepage />} />
+          <Route path="/recipe-seeker/search" key="search" element={<Search />} />
+          <Route path="/recipe-seeker/recipe/:id" key="detail" element={<RecipeDetail/>} />
+          <Route path="/recipe-seeker/favorites" key="favorites" element={<Favorites />} />
         </Routes>
       </main>
       <footer className="app-footer">
