@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./recipeCard.css";
 
 const RecipeCard = ({ recipe, detail }) => {
@@ -28,7 +29,8 @@ const RecipeCard = ({ recipe, detail }) => {
           </div>
         </div>
         ): null}
-        <a href={`/recipe/${recipe.id}`} className="stretched-link"></a>
+        <Link to={`/recipe/${recipe.id}`} className="stretched-link"></Link>
+        {/* <a href={`/recipe/${recipe.id}`} className="stretched-link"></a> */}
       </div>
     </>
   );
