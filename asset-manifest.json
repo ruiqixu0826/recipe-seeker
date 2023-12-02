@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/579project/static/css/main.00872650.css",
-    "main.js": "/579project/static/js/main.5dbeacc7.js",
-    "static/js/787.a391e9ff.chunk.js": "/579project/static/js/787.a391e9ff.chunk.js",
-    "index.html": "/579project/index.html",
-    "main.00872650.css.map": "/579project/static/css/main.00872650.css.map",
-    "main.5dbeacc7.js.map": "/579project/static/js/main.5dbeacc7.js.map",
-    "787.a391e9ff.chunk.js.map": "/579project/static/js/787.a391e9ff.chunk.js.map"
+    "main.css": "/recipe-seeker/static/css/main.00872650.css",
+    "main.js": "/recipe-seeker/static/js/main.0a1515f8.js",
+    "static/js/787.1a31e479.chunk.js": "/recipe-seeker/static/js/787.1a31e479.chunk.js",
+    "index.html": "/recipe-seeker/index.html",
+    "main.00872650.css.map": "/recipe-seeker/static/css/main.00872650.css.map",
+    "main.0a1515f8.js.map": "/recipe-seeker/static/js/main.0a1515f8.js.map",
+    "787.1a31e479.chunk.js.map": "/recipe-seeker/static/js/787.1a31e479.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00872650.css",
-    "static/js/main.5dbeacc7.js"
+    "static/js/main.0a1515f8.js"
   ]
 }
