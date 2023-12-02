@@ -20,16 +20,16 @@ const Homepage = () => {
 
   useEffect(() => {
     //COMMENTED TO PREVENT API CALLS
-    // fetch(`${API_ENDPOINT}&apiKey=${API_KEY}`)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     setRecipes(data.recipes);
-    //     console.log(data); 
-    //   })
-    //   .catch(error => {
-    //     console.error('Error fetching random recipes:', error);
-    //   });
-    setRecipes(savedRecipes);
+    fetch(`${API_ENDPOINT}&apiKey=${API_KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        setRecipes(data.recipes);
+        console.log(data); 
+      })
+      .catch(error => {
+        console.error('Error fetching random recipes:', error);
+      });
+    // setRecipes(savedRecipes);
   }, []); // Empty dependency array to run this effect only once on mount
 
   return (
