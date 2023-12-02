@@ -2,7 +2,7 @@ import Search from './components/search/search.js';
 import Homepage from './components/homepage/homepage.js'
 import RecipeDetail from './components/recipeDetail/recipeDetail.js';
 import Favorites from './components/favorites/favorites.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -20,10 +20,10 @@ function App() {
       </header>
       <main className='main-container'>
         <Routes>
-          <Route path="/recipe-seeker" key="home" element={<Homepage />} />
-          <Route path="/recipe-seeker/search" key="search" element={<Search />} />
-          <Route path="/recipe-seeker/recipe/:id" key="detail" element={<RecipeDetail/>} />
-          <Route path="/recipe-seeker/favorites" key="favorites" element={<Favorites />} />
+          <Route path="/" key="home" element={<Homepage />} />
+          <Route path="/search" key="search" element={<Search />} />
+          <Route path="/recipe/:id" key="detail" element={<RecipeDetail/>} />
+          <Route path="/favorites" key="favorites" element={<Favorites />} />
         </Routes>
       </main>
       <footer className="app-footer">
