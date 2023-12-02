@@ -3,6 +3,7 @@
 }
 
 .card{
+    width: 100%;
     transform: scale(1);
     transition: transform 200ms ease;
 }
